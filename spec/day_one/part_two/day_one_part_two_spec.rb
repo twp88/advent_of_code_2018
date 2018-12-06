@@ -8,7 +8,7 @@ describe DayOnePartTwo do
 
   context 'when called' do
     it 'returns the correct first_repeat_frequency' do
-      expect(subject.call(file)).to eq first_repeat_frequency
+      expect(subject.call(file_zero)).to eq first_repeat_frequency
     end
   end
 end
