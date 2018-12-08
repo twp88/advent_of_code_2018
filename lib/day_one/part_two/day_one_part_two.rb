@@ -1,10 +1,12 @@
 # Finds first repeated frequency
+require 'set'
 class DayOnePartTwo
   attr_accessor :number_store
 
   def self.call(file)
     instructions = parse_file(file)
     iterate_over_instructions(instructions)
+    @the_number
   end
 
   def self.parse_file(file)
@@ -12,14 +14,17 @@ class DayOnePartTwo
   end
 
   def self.iterate_over_instructions(instructions)
-    @number_store = [0]
-    @count = 0
+    number_store = Set.new
+    sum = 0
+    @the_number = nil
+    instructions.each do |x|
+      sum += x
+      if number_store.include?(sum)
+        @the_number = sum
+        break
+      end
 
-    instructions.each do |ins|
-      @count += ins
-      return @count if @number_store.include?(@count)
-
-      @number_store << @count
+      number_store << sum
     end
   end
 end
