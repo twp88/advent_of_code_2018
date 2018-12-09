@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe DayTwo do
-  subject { DayTwo }
+  subject { DayTwo.new }
   let(:file) { 'spec/extra_files/day_two/twelve.txt' }
   let(:twelve) { 12 }
 
