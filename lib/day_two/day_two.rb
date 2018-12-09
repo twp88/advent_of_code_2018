@@ -7,10 +7,9 @@ class DayTwo
 
   def call(file)
     input = parse_file(file)
-    puts "#{input}"
     count_doubles(input)
     count_triples(input)
-    multiply
+    generate_check_sum
   end
 
   private
@@ -42,7 +41,7 @@ class DayTwo
     end
   end
 
-  def multiply
+  def generate_check_sum
     @num_of_doubles * @num_of_triples
   end
 end
